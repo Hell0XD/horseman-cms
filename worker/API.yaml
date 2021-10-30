@@ -1,0 +1,68 @@
+
+/login: # logs user and saves JWT into httpOnlyCookie
+    method: POST
+    body:
+        - email: string
+        - password: string
+
+/is-loged:
+    method: GET
+    returns: boolean
+
+
+/post: # creates new post
+    authorized: true
+    method: POST
+    body:
+        - name: string
+        - content: string
+        - category?: string # optional category
+        - date: string # seconds since epoch
+
+/post: # returns list of posts 
+    method: GET
+    params:
+        - category?: string 
+        - limit?: number
+        - offset?: number # posts are sorted by date
+        - name?: string # where name
+    returns:
+        list of:
+            - name: string
+            - category?: string
+            - date: string
+
+/postc: # returns number of posts 
+        method: GET
+    params:
+        - category?: string 
+        - name?: string # where name
+    returns:
+        - count: number
+
+/post/:postName: # returs post with name specified in path `:postName`
+    method: GET
+    returns: 
+        - category?: string
+        - content: string
+        - date: string
+
+/post/:postName: # deletes post with name specified in path `:postName`
+    authorized: true
+    method: DELETE
+   
+
+
+/category: # returns list of categories
+    method: GET
+    returns: [string]
+
+
+/category: # new category
+    method: POST
+    body:
+        - name: string
+
+/category/:category: # delete a category
+    method: DELETE
+    

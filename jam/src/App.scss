@@ -1,0 +1,13 @@
+
+
+.shadow {
+    &__panel {
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+    }
+}
+
+.gradient {
+    &__panel {
+        background: linear-gradient(153.7deg, var(--color-1) 16.54%, var(--color-2) 87.88%);
+    }
+}
