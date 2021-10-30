@@ -91,7 +91,7 @@ And some database initilization
 
 and as last step do `wrangler publish`🎉✨🎉
 
-Front-end part is just classic React based site that you can host on Cloudflare pages.
+Front-end part is just classic React based site that you can host on Cloudflare pages (api url has to be changed in src/api/lib.ts).
 
 
 ## API docs
